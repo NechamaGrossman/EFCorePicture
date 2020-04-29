@@ -1,0 +1,18 @@
+﻿@using EFCorePicture.Data;
+@model List<Picture>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <br />
+        <br />
+        <a href="/Home/AddPicture" class="btn btn-primary"> Add Picture</a>
+        @foreach (Picture p in Model)
+        {
+            <div class="well">
+                <a href="/Home/Picture?Id=@p.Id"><h1>@p.Title</h1></a>
+                <a href="/Home/Picture?Id=@p.Id"><img src="@p.PictureURL" /> </a>
+                <h5>Listed on @p.Date.ToLongDateString()</h5>
+            </div>
+        }
+    </div>
+</div>
